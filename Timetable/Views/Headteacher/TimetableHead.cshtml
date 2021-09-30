@@ -1,0 +1,37 @@
+﻿<h1>Урок создан</h1>
+<h3 align="center">Класс @ViewData["className"]</h3>
+<h4 align="center">@ViewData["dayName"]</h4>
+<table class="table">
+    <thead>
+    </thead>
+    <tbody>
+        <tr>
+            <th>
+                Время звонков
+            </th>
+            <th>
+                Предмет
+            </th>
+            <th>
+                Преподаватель
+            </th>
+            <th>
+                Кабинет
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @ViewData["timeNameStart"] - @ViewData["timeNameEnd"]
+            </td>
+            <td>
+                @ViewData["lessonName"]
+            </td>
+            <td>
+                @ViewData["teacherName"]
+            </td>
+            <td>
+                @ViewData["cabinetName"]
+            </td>
+        </tr>
+    </tbody>
+</table>

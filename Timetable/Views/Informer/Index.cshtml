@@ -1,0 +1,24 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewData["Title"] = "Информер";
+}
+
+<h2 class="display-4">Показать расписание</h2>
+<hr>
+<h3>Выберите класс</h3>
+
+<table class="table">
+    <thead>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-info text-white" asp-controller="Informer" asp-action="Day" asp-route-name="@item">@Html.DisplayFor(modelItem => item)</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Главная";
+}
+
+<div class="text-center">
+    @if (!User?.Identity.IsAuthenticated ?? false)
+    {
+        <h1 class="display-4">Учебный портал</h1>
+        <h4 style="color: crimson" >Авторизуйтесь под вашим пользователем, чтобы вам стали доступны разделы</h4>
+    }
+    else
+    {
+        <h1 class="display-4">Учебный портал</h1>
+        <h4 style="color: darkcyan">Добрый день, @User.Identity.Name</h4>
+    }
+
+</div>

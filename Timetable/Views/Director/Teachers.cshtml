@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Timetable.Domains.Director.Teacher>
+
+@{
+    ViewData["Title"] = "Преподаватели";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a class="btn btn-info" asp-action="AddTeacher">Добавить</a>
+    <a class="btn btn-info" asp-action="Index">Назад</a>
+</p>
+<table class="table">
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a class="text-success" asp-action="EditTeacher" asp-route-id="@item.Id">Изменить</a> |
+                <a class="text-danger" asp-action="DeleteTeacher" asp-route-id="@item.Id">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

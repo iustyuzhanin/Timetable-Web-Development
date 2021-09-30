@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Timetable.Domains.Director.Cabinet>
+
+@{
+    ViewData["Title"] = "Кабинеты";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a class="btn btn-info" asp-action="AddCabinet">Добавить</a>
+    <a class="btn btn-info" asp-action="Index">Назад</a>
+</p>
+<table class="table">
+    @*<thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th></th>
+            </tr>
+        </thead>*@
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <a class="text-success" asp-action="EditCabinet" asp-route-id="@item.Id">Изменить</a> |
+                    <a class="text-danger" asp-action="DeleteCabinet" asp-route-id="@item.Id">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

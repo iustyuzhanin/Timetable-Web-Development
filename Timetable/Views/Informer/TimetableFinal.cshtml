@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Timetable.Domains.Headteacher.TimetableHead>
+
+<h1>Расписание уроков</h1>
+<h3 align="center">Класс @ViewData["className"]</h3>
+<h4 align="center">@ViewData["dayName"]</h4>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Время звонков
+        </th>
+        <th>
+            Предмет
+        </th>
+        <th>
+            Преподаватель
+        </th>
+        <th>
+            Кабинет
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+        
+        @if (!Model.Any())
+        {
+            <tr>
+                <td>Нет уроков в этот день</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var time in Model)
+            {
+
+                <tr>
+                    <td>
+                        @time.timeStart - @time.timeEnd
+                    </td>
+                    <td>
+                        @time.Lesson
+                    </td>
+                    <td>
+                        @time.Teacher
+                    </td>
+                    <td>
+                        @time.Cabinet
+                    </td>
+                </tr>
+            }
+        }
+        
+
+    </tbody>
+</table>

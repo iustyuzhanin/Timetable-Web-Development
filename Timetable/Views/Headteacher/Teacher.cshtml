@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Timetable.Domains.Director.Teacher>
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Выберите преподавателя для «@ViewData["Name"]»</h1>
+
+<table class="table">
+    <thead>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-info text-white" asp-controller="Headteacher" asp-action="Cabinet" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

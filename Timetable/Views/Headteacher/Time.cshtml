@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Timetable.Domains.Director.Time>
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Выберите время для «@ViewData["Name"]»</h1>
+
+<table class="table">
+    <thead>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-info text-white" asp-controller="Headteacher" asp-action="TimetableHead" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Number)</a>
+                    &nbsp;
+                    @Html.DisplayFor(modelItem => item.StartTime) -
+                    @Html.DisplayFor(modelItem => item.EndTime)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
